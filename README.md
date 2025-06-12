@@ -10,12 +10,13 @@
 
 2. What is the purpose of the Dead‑Letter Queue (DLQ)?
     a. A DLQ (commonly an SQS queue) is attached to an SNS subscription to store messages that failed delivery after retries due to client or server errors
+  
     b. It provides mechanisms for:
        * Troubleshooting and reprocessing undelivered messages
        * Fault isolation, preventing retries from overwhelming the primary processing system
        * Monitoring DLQ activity via CloudWatch metrics (e.g., ApproximateNumberOfMessagesVisible) and alarms
 
-3. How to enable email notifications when messages are added to the DLQ?
+4. How to enable email notifications when messages are added to the DLQ?
   * Create a CloudWatch alarm on the DLQ’s ApproximateNumberOfMessagesVisible metric (threshold ≥1).
   * Define an SNS topic as the alarm’s notification endpoint.
   * Subscribe an email endpoint to that SNS topic.
