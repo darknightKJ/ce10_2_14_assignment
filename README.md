@@ -9,6 +9,7 @@
     * In practice, even with FIFO, network disruptions or publisher-side misconfiguration can lead to duplicates, so applications should still handle idempotency
 
 2. What is the purpose of the Dead‑Letter Queue (DLQ)?
+   
     a. A DLQ (commonly an SQS queue) is attached to an SNS subscription to store messages that failed delivery after retries due to client or server errors
   
     b. It provides mechanisms for:
