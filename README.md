@@ -12,8 +12,11 @@
     a. A DLQ (commonly an SQS queue) is attached to an SNS subscription to store messages that failed delivery after retries due to client or server errors
   
     b. It provides mechanisms for:
+   
        * Troubleshooting and reprocessing undelivered messages
+
        * Fault isolation, preventing retries from overwhelming the primary processing system
+
        * Monitoring DLQ activity via CloudWatch metrics (e.g., ApproximateNumberOfMessagesVisible) and alarms
 
 4. How to enable email notifications when messages are added to the DLQ?
