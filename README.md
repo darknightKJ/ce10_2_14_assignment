@@ -4,9 +4,9 @@
 
 1. Does SNS guarantee exactly-once delivery to subscribers?
 
-    a. Standard SNS topics provide at‑least‑once delivery, meaning messages may be delivered more than once, and duplicates are possible
-    b. SNS FIFO topics, when subscribed to SQS FIFO queues, can achieve exactly-once delivery, given proper deduplication attributes and absence of filtering
-    c. In practice, even with FIFO, network disruptions or publisher-side misconfiguration can lead to duplicates, so applications should still handle idempotency
+    * Standard SNS topics provide at‑least‑once delivery, meaning messages may be delivered more than once, and duplicates are possible
+    * SNS FIFO topics, when subscribed to SQS FIFO queues, can achieve exactly-once delivery, given proper deduplication attributes and absence of filtering
+    * In practice, even with FIFO, network disruptions or publisher-side misconfiguration can lead to duplicates, so applications should still handle idempotency
 
 2. What is the purpose of the Dead‑Letter Queue (DLQ)?
     a. A DLQ (commonly an SQS queue) is attached to an SNS subscription to store messages that failed delivery after retries due to client or server errors
